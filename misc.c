@@ -892,7 +892,7 @@ long I, VAL;
 		if (logfp)
 			fclose(logfp);
 	} else {
-		if (logfp)
+		if (logfp && OPENED == stdin)
 			IGNORE(fputs(INLINE+1, logfp));
 		else if (!isatty(0)) {
 			IGNORE(fputs("> ", stdout));
