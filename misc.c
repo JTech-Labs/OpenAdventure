@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "main.h"
 #include "misc.h"
 #include "funcs.h"
@@ -885,7 +886,7 @@ long I, VAL;
 	if (!oldstyle && OPENED == stdin)
 		fputs("> ", stdout);
 	do {
-		IGNORE(fgets(INLINE+1,sizeof(INLINE)-1,OPENED));
+		IGNORE(fgets(rawbuf,sizeof(INLINE)-1,OPENED));
 	} while
 		(!feof(OPENED) && INLINE[1] == '#');
 	if (feof(OPENED)) {
@@ -893,11 +894,10 @@ long I, VAL;
 			fclose(logfp);
 	} else {
 		if (logfp && OPENED == stdin)
-			IGNORE(fputs(INLINE+1, logfp));
-		else if (!isatty(0)) {
-			IGNORE(fputs("> ", stdout));
-			IGNORE(fputs(INLINE+1, stdout));
-		}
+			IGNORE(fputs(rawbuf, logfp));
+		else if (!isatty(0))
+			IGNORE(fputs(rawbuf, stdout));
+		strcpy(INLINE+1, rawbuf);
 		LNLENG=0;
 		for (I=1; I<=sizeof(INLINE) && INLINE[I]!=0; I++) {
 		VAL=INLINE[I]+1;
