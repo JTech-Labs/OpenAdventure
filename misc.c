@@ -883,9 +883,12 @@ long I, VAL;
 
 	if(MAP2[1] == 0)MPINIT();
 
-	if (!oldstyle && isatty(0))
-	    fputs("> ", stdout);
-	IGNORE(fgets(INLINE+1,sizeof(INLINE)-1,OPENED));
+	if (!oldstyle && OPENED == stdin)
+		fputs("> ", stdout);
+	do {
+		IGNORE(fgets(INLINE+1,sizeof(INLINE)-1,OPENED));
+	} while
+		(!feof(OPENED) && INLINE[1] == '#');
 	if (feof(OPENED)) {
 		if (logfp)
 			fclose(logfp);
