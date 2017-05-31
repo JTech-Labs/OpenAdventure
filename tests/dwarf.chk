@@ -386,8 +386,30 @@ A crystal bridge now spans the fissure.
 
 OK   
 
+<<<<<<< HEAD
 > 
 You scored  97 out of a possible 430, using   60 turns.  
+=======
+> e
+
+A little dwarf with a big knife blocks your way.  
+
+There are 2 threatening little dwarves in the room with you.  
+
+2 of them throw knives at you!  
+
+One of them gets you!    
+
+Oh dear, you seem to have gotten yourself killed.  I might be able to 
+help you out, but I've never really done this before.  Do you want me 
+to try to reincarnate you?   
+
+> n
+
+OK   
+
+You scored  81 out of a possible 430, using   55 turns.  
+>>>>>>> 6a6670e (Fix things so seed doesn't cost clock time.)
 
 Your score qualifies you as a novice class adventurer. 
 
