@@ -4,10 +4,10 @@ OBJS=main.o init.o actions1.o actions2.o score.o misc.o
 SOURCES=$(OBJS:.o=.c) COPYING NEWS README TODO advent.text control
 
 .c.o:
-	gcc -O $(DBX) -c $<
+	gcc -g $(DBX) -c $<
 
-advent:	$(OBJS)
-	gcc -O $(DBX) -o advent $(OBJS)
+advent430:	$(OBJS)
+	gcc -g $(DBX) -o advent430 $(OBJS)
 
 main.o:		misc.h funcs.h
 
@@ -22,7 +22,10 @@ score.o:	misc.h main.h share.h
 misc.o:		misc.h main.h
 
 clean:
-	rm -f *.o advent advent.html advent.6
+	rm -f *.o advent.html advent.6
+
+realclean: clean
+	rm -f adventure.data advent430
 
 # Requires asciidoc and xsltproc/docbook stylesheets.
 .asc.6:
