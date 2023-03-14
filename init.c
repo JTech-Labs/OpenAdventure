@@ -180,7 +180,7 @@ void initialise(void) {
 }
 
 static int raw_init(void) {
-	printf("Couldn't find adventure.data, using adventure.text...\n");
+    //printf("Couldn't find adventure.data, using adventure.text...\n");
 
 	FILE *OPENED=fopen("adventure.text","r" /* NOT binary */);
 	if(!OPENED){printf("Can't read adventure.text!\n"); exit(0);}
@@ -634,7 +634,7 @@ L1993:	SETPRM(1,LINUSE,LINSIZ);
 	SETPRM(15,CLSSES,CLSMAX);
 	SETPRM(17,HNTMAX,HNTSIZ);
 	SETPRM(19,TRNVLS,TRNSIZ);
-	RSPEAK(267);
+	//RSPEAK(267);
 	TYPE0();
 }
 
@@ -661,7 +661,7 @@ static bool quick_init(void) {
 }
 
 static void quick_save(void) {
-	printf("Writing adventure.data...\n");
+	//printf("Writing adventure.data...\n");
 	f = fopen("adventure.data",WRITE_MODE);
 	if(f == NULL){printf("Can't open file!\n"); return;}
 	init_reading = false;
