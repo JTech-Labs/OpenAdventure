@@ -994,6 +994,8 @@ L10:	fclose(F);
 
 L20:	printf("\nFile name: ");
 	IGNORE(fgets(NAME, sizeof(NAME), stdin));
+	if (NAME[strlen(NAME)-1] == '\n')
+	    NAME[strlen(NAME)-1] = '\0';
 	F=fopen(NAME,(IN ? READ_MODE : WRITE_MODE));
 	if(F == NULL) {printf("Can't open file, try again.\n"); goto L20;}
 	return;
