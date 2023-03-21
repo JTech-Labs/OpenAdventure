@@ -997,7 +997,7 @@ L20:	printf("\nFile name: ");
 	if (NAME[strlen(NAME)-1] == '\n')
 	    NAME[strlen(NAME)-1] = '\0';
 	F=fopen(NAME,(IN ? READ_MODE : WRITE_MODE));
-	if(F == NULL) {printf("Can't open file, try again.\n"); goto L20;}
+	if(F == NULL) {printf("Can't open file, try again.\n"); /* goto L20; */}
 	return;
 
 L30:	if(IN)IGNORE(fread(ARR,sizeof(long),250,F));
