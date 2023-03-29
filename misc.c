@@ -770,6 +770,9 @@ unsigned long get_next_lcg_value(void)
   /* Return the LCG's current value, and then iterate it. */
   unsigned long old_x = lcgstate.x;
   lcgstate.x = (lcgstate.a * lcgstate.x + lcgstate.c) % lcgstate.m;
+  if (debug) {
+      printf("# random %lu\n", old_x);
+  }
   return(old_x);
 }
 

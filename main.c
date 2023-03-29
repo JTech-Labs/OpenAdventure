@@ -42,6 +42,7 @@ long ABBNUM, ACTSPK[36], AMBER, ATTACK, AXE, BACK, BATTER, BEAR, BIRD, BLOOD, BO
 		WZDARK = false, ZZWORD;
 FILE  *logfp;
 bool oldstyle = false;
+int debug;
 lcg_state lcgstate;
 
 extern void initialise();
@@ -67,8 +68,11 @@ int main(int argc, char *argv[]) {
 
 /*  Options. */
 
-	while ((ch = getopt(argc, argv, "l:o")) != EOF) {
+	while ((ch = getopt(argc, argv, "dl:o")) != EOF) {
 		switch (ch) {
+		case 'd':
+		    debug += 1;
+		    break;
 		case 'l':
 			logfp = fopen(optarg, "w+");
 			if (logfp == NULL)

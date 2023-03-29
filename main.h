@@ -13,4 +13,5 @@ extern long ABB[], ATAB[], ATLOC[], BLKLIN, DFLAG, DLOC[], FIXED[], HOLDNG,
 extern signed char rawbuf[LINESIZE], INLINE[LINESIZE+1], MAP1[], MAP2[];
 extern FILE *logfp;
 extern bool oldstyle;
+extern int debug;
 extern lcg_state lcgstate;
