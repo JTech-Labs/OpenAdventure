@@ -14,3 +14,4 @@ or both.  See the history file for discussion.  The original 6-character
 name on the PDP-10 has been reverted to in order to avoid a collision
 with the BSD games port of the ancestral 196 version.
 
+For help with compiling please visit [this website](https://developers.redhat.com/articles/build-run-colossal-cave-adventure-game#playing_the_game)
